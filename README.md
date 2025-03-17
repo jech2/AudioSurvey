@@ -18,7 +18,7 @@ npm install
 ```
 npm run dev
 ```
-- Currently, 30010 port is used.
+- Currently, 30010 port is used. 
 - Currently, 8000 port of backend is connected as reverse proxy. (backend port number don't need to be opened.)
 - If page not shown, check whether any adblock plugin is used.
 

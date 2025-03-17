@@ -80,7 +80,7 @@ export function InstructionsPopup({ isOpen, onClose, registerAudioRef, handleAud
                 title={example.title}
                 imageSrc={`${PATHS.EVAL_EXAMPLES}/${example.id}/${PATHS.LEADSHEET.IMAGE}`}
                 leadsheetAudioSrc={`${PATHS.EVAL_EXAMPLES}/${example.id}/${PATHS.LEADSHEET.AUDIO}`}
-                generatedAudioSrc={`${PATHS.EVAL_EXAMPLES}/${example.id}/valid.wav`}
+                generatedAudioSrc={`${PATHS.EVAL_EXAMPLES}/${example.id}/${example.generatedAudio}`}
                 scores={example.scores}
                 comment={example.comment}
                 registerAudioRef={registerAudioRef}
