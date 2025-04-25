@@ -258,11 +258,11 @@ export function ExperimentForm() {
           setIsSubmitted(true);
           
           // 제출 완료 후 3초 뒤에 로그인 페이지로 이동
-          setTimeout(() => {
-            sessionStorage.removeItem('currentUser');
-            localStorage.removeItem(`responses_${userName}`);
-            // navigate('/', { replace: true });
-          }, 3000);
+          // setTimeout(() => {
+          //   // sessionStorage.removeItem('currentUser');
+          //   // localStorage.removeItem(`responses_${userName}`);
+          //   // navigate('/', { replace: true });
+          // }, 3000);
         }
       } catch (error) {
         console.error('Error during submission:', error);

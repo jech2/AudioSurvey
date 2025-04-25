@@ -50,8 +50,8 @@ export function InstructionsPopup({ isOpen, onClose, registerAudioRef, handleAud
             <h3 className="text-xl font-semibold text-blue-700 mt-6">실험 방법</h3>
             <ol className="list-decimal pl-5">
               <li>총 10개의 샘플과 6개의 비교모델이 준비되어 있습니다.</li>
-              <li>각 샘플별로 주어진 리드 시트를 확인한 후 아래에 제시되는 모든 오디오들을 듣고 평가해주시면 됩니다. (필요시 리드시트의 오디오도 들어주세요)</li>
-              <li>각 샘플에 대해 제시된 평가 기준에 대해서 <strong>1-5점</strong>으로 평가를 부탁드립니다.</li>
+              <li>각 샘플별로 주어진 리드 시트를 확인한 후 아래에 제시되는 모든 오디오들을 끝까지 듣고 평가해주시면 됩니다. (필요시 리드시트의 오디오도 들어주세요)</li>
+              <li>각 오디오마다 제시된 평가 기준에 대해서 <strong>1-5점</strong>으로 평가를 부탁드립니다.</li>
               <li>한 페이지의 모든 평가를 완료하면 '다음 샘플' 버튼을 클릭하여 다음으로 진행해주세요. <strong>(다음 샘플 버튼을 클릭해야 진행상황이 저장됩니다.)</strong></li>
               <li>마지막 페이지에서는 <strong>'평가 결과 제출' 버튼을 클릭</strong>하여 실험을 완료합니다.</li>
             </ol>
@@ -59,7 +59,7 @@ export function InstructionsPopup({ isOpen, onClose, registerAudioRef, handleAud
             <h3 className="text-xl font-semibold text-blue-700 mt-6">평가 기준</h3>
             <ul className="list-disc pl-5 mb-4">
               <li><strong>멜로디와 어울림</strong>: 주어진 <strong>멜로디</strong>와 반주가 얼마나 잘 어울리나요?</li>
-              <li><strong>화성</strong>: 반주는 주어진 코드 진행을 얼마나 잘 따르나요? (코드의 구성음을 잘 누르고 있는지, 생략하는 음이 있진 않은지)</li>
+              <li><strong>화성</strong>: 반주는 주어진 코드 진행을 얼마나 정확하게 따르나요? </li>
               <li><strong>일관성</strong>: 반주가 <strong>리듬</strong>적인 측면에서 음악적인 일관성을 가지고 있나요?</li>
               <li><strong>정확도</strong>: 반주에 <strong>눈에 띄는 오류</strong>가 있나요? (화성, 리듬적으로 <strong>이상한 음이 등장</strong>하는지)</li>
               <li><strong>전체적인 퀄리티</strong>: 생성된 반주는 얼마나 음악적인가요?</li>
