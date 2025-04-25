@@ -31,11 +31,16 @@ npm -v    # -> 10.8.2
 ```
 # Installation
 ```
-$ npm install
+## Frontend
+npm install
+
+## Backend
+pip install uvicorn
+pip install fastapi
 ```
 
 # How to Run
-## FrontEnd
+## Frontend
 ```
 $ npm run dev
 ```

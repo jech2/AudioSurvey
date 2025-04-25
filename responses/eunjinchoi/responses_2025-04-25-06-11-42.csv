@@ -1,0 +1,13 @@
+user_name,sample_id,audio_file,멜로디와 어울림,화성,일관성,정확도,전체적인 퀄리티
+eunjinchoi,472__seg_0_8,wholesonggen.wav,1,2,3,4,5
+eunjinchoi,472__seg_0_8,d3rm.wav,2,3,4,5,1
+eunjinchoi,472__seg_0_8,valid.wav,3,4,5,1,2
+eunjinchoi,472__seg_0_8,cne_no_velocity.wav,4,5,1,2,3
+eunjinchoi,472__seg_0_8,efficient_diffusion.wav,5,1,2,3,4
+eunjinchoi,472__seg_0_8,polyffusion.wav,1,2,3,4,5
+eunjinchoi,780__seg_8_16,valid.wav,1,2,3,4,5
+eunjinchoi,780__seg_8_16,polyffusion.wav,2,3,4,5,1
+eunjinchoi,780__seg_8_16,wholesonggen.wav,3,4,5,1,2
+eunjinchoi,780__seg_8_16,efficient_diffusion.wav,4,5,1,2,3
+eunjinchoi,780__seg_8_16,d3rm.wav,5,1,2,3,4
+eunjinchoi,780__seg_8_16,cne_no_velocity.wav,1,2,3,4,5

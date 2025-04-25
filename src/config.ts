@@ -14,7 +14,7 @@ export const EXPERIMENT_CONFIG = {
   // 디버그 모드 설정
   DEBUG_MODE: true,
   DEBUG: {
-    SAMPLE_COUNT: 10,    // 샘플 수
+    SAMPLE_COUNT: 2,    // 샘플 수
     AUDIO_COUNT: 6,     // 각 샘플당 오디오 수
   }
 } as const;
