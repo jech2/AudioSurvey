@@ -5,7 +5,7 @@ export async function loadAudioSamples(experimentIndex: number): Promise<AudioSa
   try {
     const audioFiles = import.meta.glob('../../public/data/audio_samples/**/*.wav', { eager: true });
     
-    // 폴더 목록 가져오기
+    // load folder list 
     const folders = Array.from(new Set(
       Object.keys(audioFiles).map(path => {
         const match = path.match(/\/audio_samples\/([^/]+)\//);
@@ -15,10 +15,10 @@ export async function loadAudioSamples(experimentIndex: number): Promise<AudioSa
     
     const userName = sessionStorage.getItem('currentUser');
     if (userName) {
-      // 설정에 따라 폴더 순서 결정
+      // determine the order of samples based on config
       const orderedFolders = EXPERIMENT_CONFIG.SHUFFLE_SAMPLES 
         ? shuffleArrayWithSeed(folders, userName)
-        : folders.sort();  // 셔플하지 않을 경우 알파벳 순으로 정렬
+        : folders.sort();  // if not shuffle, order by alphabet
 
       console.log('Ordered folders:', orderedFolders);
 
@@ -32,10 +32,10 @@ export async function loadAudioSamples(experimentIndex: number): Promise<AudioSa
           audioUrl: (module as any).default
         }));
 
-      // 설정에 따라 모델 순서 결정
+      // determin the order of models
       return EXPERIMENT_CONFIG.SHUFFLE_MODELS 
         ? shuffleArray(experimentFiles)
-        : experimentFiles.sort((a, b) => a.id.localeCompare(b.id));  // 셔플하지 않을 경우 파일명 순으로 정렬
+        : experimentFiles.sort((a, b) => a.id.localeCompare(b.id));  // if not shuffle, order by alphabet
     }
     
     return [];
@@ -45,7 +45,7 @@ export async function loadAudioSamples(experimentIndex: number): Promise<AudioSa
   }
 }
 
-// 시드 기반 랜덤 함수
+// random function 
 function seededRandom(seed: string) {
   let hash = 0;
   for (let i = 0; i < seed.length; i++) {
@@ -57,7 +57,7 @@ function seededRandom(seed: string) {
   return x - Math.floor(x);
 }
 
-// 시드 기반 배열 섞기 함수
+// shuffle function
 function shuffleArrayWithSeed<T>(array: T[], seed: string): T[] {
   const shuffled = [...array];
   const random = seededRandom(seed);
@@ -70,7 +70,6 @@ function shuffleArrayWithSeed<T>(array: T[], seed: string): T[] {
   return shuffled;
 }
 
-// 기존의 일반 랜덤 섞기 함수 (오디오 파일용)
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {

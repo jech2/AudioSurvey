@@ -1,12 +1,24 @@
 # Webpage for Audio Subjective Evaluation
-User data is saved as localStorage and we implemented the progress saving in their local.
-Stimuli is shown as randomized order (both sample wise and model wise).
+This repository contains interactive webpage for subjective evaluation with audio samples.
+** Currently, the page is shown in Korean. We will also release the english version in the future.
+
+# Features
+- Users enter their name to begin the experiment, and when they finished the experiment, their responses are saved in responses/{user_name}/response_{timestamp}.csv. You can also monitor the user response time per each page (page_logs csv file). Check the dummy response file from response/eunjinchoi.
+- Upon starting, an introduction popup appears; it can be reopened anytime by clicking the question-mark button in the lower right corner.
+- In the main session, each trial displays an image alongside reference audio. Under each model condition, the generated audio is presented and users rate it across various metrics.
+- A Debug mode is available for testing: it can generate dummy responses and reveals sample and model names.
+- Trials are displayed in randomized order, both by sample and by model.
+- All user data and progress are stored in localStorage, allowing participants to resume the experiment in the same browser.
+- If the backend server is unavailable, responses are automatically packaged into a downloadable ZIP file in local so users can preserve and submit their data without loss.
+
+# How to Use
 Audio samples are stored in the public/data/audio_samples and public/data/audio_examples for explanation slide.
 To change the audio loading path, change the PATHS of src/config.ts and this part of src/utils/audioLoader.ts. 
 ```
 const audioFiles = import.meta.glob('../../public/data/audio_samples/**/*.wav', { eager: true });
 ```
-**note: Currently, import.meta.glob of Vite doesn't support dynamic literal so that the path is hard coded.
+** Currently, import.meta.glob of Vite doesn't support dynamic literal so that the path is hard coded.
+** Currently, we implemented deploying the server with dev setting (suitable with small number of participants). 
 
 # Env Setting
 ## Install nvm
@@ -56,3 +68,6 @@ $ npm run dev
 ```
 $ uvicorn server.main:app --reload --port 8000
 ```
+
+## Contact
+If you have any questions regarding this repository, contact Eunjin Choi (jech@kaist.ac.kr). 

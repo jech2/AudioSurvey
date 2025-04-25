@@ -10,12 +10,12 @@ import os
 app = FastAPI()
 security = HTTPBasic()
 
-# CORS 설정 수정
+# CORS setting
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 모든 origin 허용
+    allow_origins=["*"],  # permit all origin
     allow_credentials=True,
-    allow_methods=["GET", "POST"],  # 허용할 HTTP 메서드 명시
+    allow_methods=["GET", "POST"], 
     allow_headers=["*"],
 )
 
@@ -31,25 +31,24 @@ class ResponseData(BaseModel):
     userName: str
     csvContent: str
     timestamp: str
-    logsContent: Optional[str] = None  # 로그 콘텐츠를 선택적 필드로 추가
+    logsContent: Optional[str] = None  # optional
 
 @app.post("/save-responses")
 async def save_responses(data: ResponseData):
     try:
         print('server get file')
-        # 타임스탬프 포맷 변경 (시간 포함)
-        timestamp = datetime.fromisoformat(data.timestamp.replace('Z', '+00:00')).strftime('%Y-%m-%d-%H-%M-%S')
         
-        # 응답 데이터 파일명
+        # set response data file name
+        timestamp = datetime.fromisoformat(data.timestamp.replace('Z', '+00:00')).strftime('%Y-%m-%d-%H-%M-%S')
         response_filename = f"responses_{timestamp}.csv"
         response_filepath = os.path.join(RESPONSES_DIR, data.userName, response_filename)
         os.makedirs(os.path.dirname(response_filepath), exist_ok=True)
         
-        # CSV 파일 저장 - 평가 데이터
+        # save csv
         with open(response_filepath, "w", encoding="utf-8") as f:
             f.write(data.csvContent)
         
-        # 페이지 로그 데이터가 있으면 저장
+        # save page log data
         if data.logsContent:
             logs_filename = f"page_logs_{timestamp}.csv"
             logs_filepath = os.path.join(RESPONSES_DIR, data.userName, logs_filename)
@@ -74,7 +73,7 @@ async def save_responses(data: ResponseData):
         print(f"Error saving responses: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-# 서버 상태 확인용 엔드포인트
+# end point for checking server status
 @app.get("/")
 async def read_root():
     return {"status": "Server is running"} 

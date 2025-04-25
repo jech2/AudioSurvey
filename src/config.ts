@@ -1,38 +1,37 @@
 // export const METRICS = ['Coherence', 'Harmony', 'Consistency', 'Correctness', 'Overall', 'Creativity'];
-export const METRICS = ['멜로디와 어울림', '화성', '일관성', '정확도', '전체적인 퀄리티'];
+export const METRICS = ['멜로디와 어울림', '화성', '일관성', '정확도', '전체적인 퀄리티']
 
-// 디버그 모드용 메트릭
 // export const DEBUG_METRICS = ['Coherence', 'Harmony', 'Consistency', 'Correctness', 'Overall', 'Creativity'];
-export const DEBUG_METRICS = METRICS;  // 디버그 모드에서도 동일한 메트릭 사용
+export const DEBUG_METRICS = METRICS;  // use same metrics for debug mode
 
 // 실험 설정
 export const EXPERIMENT_CONFIG = {
-  // 샘플 순서 랜덤화 (폴더 순서)
+  // randomize sample order
   SHUFFLE_SAMPLES: true,
-  // 모델 순서 랜덤화 (각 폴더 내 오디오 파일 순서)
+  // randomize model sample order
   SHUFFLE_MODELS: true,
-  // 디버그 모드 설정
+  // set debug mode
   DEBUG_MODE: true,
   DEBUG: {
-    SAMPLE_COUNT: 2,    // 샘플 수
-    AUDIO_COUNT: 6,     // 각 샘플당 오디오 수
+    SAMPLE_COUNT: 2,    // the number of samples
+    AUDIO_COUNT: 6,     // the number of models per sample
   }
 } as const;
 
-// 파일 경로 설정
+// set audio sample directory
 export const PATHS = {
-  // 오디오 샘플 기본 경로
+  // default directory for audio samples
   AUDIO_SAMPLES: './public/data/audio_samples',
-  // 실험 예시 기본 경로
+  // directory for audio examples (for introduction popup)
   EVAL_EXAMPLES: './public/data/audio_examples',
-  // 리드시트 관련 파일명
+  // leadsheet related file names
   LEADSHEET: {
     IMAGE: 'leadsheet-1.png',
     AUDIO: 'leadsheet.wav'
   }
 } as const;
 
-// 실험 예시 데이터
+// example data for the introduction pop up
 export const EXAMPLE_DATA = [
   {
     id: '893__seg_32_40',

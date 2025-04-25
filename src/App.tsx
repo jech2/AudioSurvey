@@ -4,7 +4,7 @@ import { ExperimentForm } from './components/ExperimentForm';
 import { ExperimentEnd } from './components/ExperimentEnd';
 
 function App() {
-  // 페이지 로드/새로고침 시 sessionStorage 초기화
+  // reinitialization of sessionStorage when refresh the page
   if (typeof window !== 'undefined') {  // SSR 대비
     sessionStorage.removeItem('currentUser');
   }

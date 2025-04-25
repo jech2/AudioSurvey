@@ -5,7 +5,7 @@ export function Login() {
   const [userName, setUserName] = useState('');
   const navigate = useNavigate();
 
-  // 컴포넌트 마운트 시 세션 초기화
+  // reinitialization session when mount
   useEffect(() => {
     sessionStorage.removeItem('currentUser');
   }, []);
@@ -16,14 +16,14 @@ export function Login() {
     if (userName.trim()) {
       const trimmedUserName = userName.trim();
       
-      // 기존 응답 데이터 확인
+      // check previous response item (for continuing the experiment)
       const savedData = localStorage.getItem(`responses_${trimmedUserName}`);
       
       if (savedData) {
         try {
-          // 저장된 데이터가 유효한지 확인
+          // check the validity of the data
           const parsedData = JSON.parse(savedData);
-          console.log('Found saved data:', parsedData);  // 디버깅용
+          console.log('Found saved data:', parsedData);  // for debugging
           
           const confirmed = window.confirm(
             '이전에 저장된 응답이 있습니다. 계속하시겠습니까?\n' +
