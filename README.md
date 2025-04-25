@@ -11,6 +11,9 @@ const audioFiles = import.meta.glob('../../public/data/audio_samples/**/*.wav', 
 # Env Setting
 ## Install nvm
 ```
+sudo apt update
+sudo apt install curl
+
 curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 source ~/.bashrc   # or source ~/.profile
 ```
@@ -31,10 +34,11 @@ npm -v    # -> 10.8.2
 ```
 # Installation
 ```
-## Frontend
+# Frontend
 npm install
 
 ## Backend
+# install related packages. we tested in python 3.10.
 pip install uvicorn
 pip install fastapi
 ```

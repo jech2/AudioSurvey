@@ -16,5 +16,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '') // '/api' 프리픽스 제거
       }
     },
-  }
+    host: '0.0.0.0',
+  },
+  
 });
