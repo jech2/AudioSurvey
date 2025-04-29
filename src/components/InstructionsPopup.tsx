@@ -44,7 +44,7 @@ export function InstructionsPopup({ isOpen, onClose, registerAudioRef, handleAud
               <li>추가로, 여러 tab에서 같은 이름으로 접속하면 안되니 <strong className="text-black">꼭 하나의 tab에서 실험을 진행해주세요.</strong></li>
               <li><strong className="text-black">실험이 완료된 후에는 완료되었다고 카카오톡으로 말씀 부탁드립니다!</strong></li>
               <li><strong className="text-black">우측 하단의 물음표 버튼을 클릭</strong>하시면 이 실험 안내 창을 다시 확인하실 수 있습니다.</li>
-              <li>실험 진행 중 <strong className="text-black">문의사항</strong>이 있으시다면 <strong className="text-black">카카오톡, 혹은 최은진 (010-3674-4215) 으로 연락</strong> 부탁드립니다.</li>
+              <li>실험 진행 중 <strong className="text-black">문의사항</strong>이 있으시다면 <strong className="text-black">카카오톡, 혹은 최은진 (jech@kaist.ac.kr) 으로 연락</strong> 부탁드립니다.</li>
             </ul>
             
             <h3 className="text-xl font-semibold text-blue-700 mt-6">실험 방법</h3>
