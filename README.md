@@ -9,11 +9,11 @@ This repository provides an interactive, browser-based platform for subjective a
 
 - **Introduction Popup**: An introductory popup appears at startup and can be reopened at any time via the question-mark button in the lower-right corner.
 
+- **Randomized Trials**: Presentation order for both samples and models is randomized for each session.
+
 - **Multi-Model Evaluation**: Each trial displays an image alongside the reference audio. Generated audio from different model conditions is presented below for rating on various subjective metrics.
 
 - **Debug Mode**: Activate Debug mode to generate dummy responses and reveal sample and model names for debugging purposes.
-
-- **Randomized Trials**: Presentation order for both samples and models is randomized for each session.
 
 - **Progress Persistence**: All user data and progress are stored in localStorage, allowing participants to resume the experiment in the same browser session.
 
