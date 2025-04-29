@@ -11,7 +11,7 @@ This repository provides an interactive, browser-based platform for subjective a
 
 - **Multi-Model Evaluation**: Each trial displays an image alongside the reference audio. Generated audio from different model conditions is presented below for rating on various subjective metrics.
 
-- **Debug Mode**: Activate Debug mode to generate dummy responses and reveal sample and model names for testing purposes.
+- **Debug Mode**: Activate Debug mode to generate dummy responses and reveal sample and model names for debugging purposes.
 
 - **Randomized Trials**: Presentation order for both samples and models is randomized for each session.
 
