@@ -671,11 +671,11 @@ export function ExperimentForm() {
                 </li>
                 <li className="flex items-start">
                   <span className="font-medium mr-2">2.</span>
-                  <span>ZIP 파일을 아래 카카오톡 채널로 전송해주시거나 jech@kaist.ac.kr로 전송해주세요.</span>
+                  <span>ZIP 파일을 아래 카카오톡 채널로 전송해주시거나 your_contact로 전송해주세요.</span>
                 </li>
               </ol>
               <a 
-                href="https://open.kakao.com/o/somZ4olh" 
+                href="your_url" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"

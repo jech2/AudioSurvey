@@ -1,26 +1,57 @@
-# Webpage for Audio Subjective Evaluation
-This repository contains interactive webpage for subjective evaluation with audio samples.
+# AudioSurvey: A Web-Based Audio Evaluation Tool
+This repository provides an interactive, browser-based platform for subjective audio evaluation experiments. Participants can listen to audio samples, rate them across multiple metrics, and have their responses recorded for analysis.
 
 ![image](./survey_example.png)
 ** Currently, the page is shown in Korean. We will also release the english version in the future.
 
+** Currently, we implemented deploying the server with dev setting (suitable with small number of participants). 
+
 # Features
-- Users enter their name to begin the experiment, and when they finished the experiment, their responses are saved in responses/{user_name}/response_{timestamp}.csv. You can also monitor the user response time per each page (page_logs csv file). Check the dummy response file from response/eunjinchoi.
-- Upon starting, an introduction popup appears; it can be reopened anytime by clicking the question-mark button in the lower right corner.
-- In the main session, each trial displays an image alongside reference audio. Under each model condition, the generated audio is presented and users rate it across various metrics.
-- A Debug mode is available for testing: it can generate dummy responses and reveals sample and model names.
-- Trials are displayed in randomized order, both by sample and by model.
-- All user data and progress are stored in localStorage, allowing participants to resume the experiment in the same browser.
-- If the backend server is unavailable, responses are automatically packaged into a downloadable ZIP file in local so users can preserve and submit their data without loss.
+- **Participant Tracking**: Users enter their name to begin the experiment. Responses are saved to responses/{user_name}/response_{timestamp}.csv, and page log files capture time spent on each page. Check out the sample data in responses/eunjinchoi/.
+
+- **Introduction Popup**: An introductory popup appears at startup and can be reopened at any time via the question-mark button in the lower-right corner.
+
+- **Multi-Model Evaluation**: Each trial displays an image alongside the reference audio. Generated audio from different model conditions is presented below for rating on various subjective metrics.
+
+- **Debug Mode**: Activate Debug mode to generate dummy responses and reveal sample and model names for testing purposes.
+
+- **Randomized Trials**: Presentation order for both samples and models is randomized for each session.
+
+- **Progress Persistence**: All user data and progress are stored in localStorage, allowing participants to resume the experiment in the same browser session.
+
+- **Offline Data Packaging**: If the backend server is unavailable, responses are automatically packaged into a downloadable ZIP file so users can save and submit their data without loss.
+
 
 # How to Use
-Audio samples are stored in the public/data/audio_samples and public/data/audio_examples for explanation slide.
-To change the audio loading path, change the PATHS of src/config.ts and this part of src/utils/audioLoader.ts. 
+## Audio Samples
+The audio files used in the experiment are stored under:
+- `public/data/audio_samples` (main samples)
+- `public/data/audio_examples` (intro popup examples)
+
+To update the loading path:
+1. Adjust the `PATHS` constant in `src/config.ts`.
+2. Modify the glob import in `src/utils/audioLoader.ts`:
+   ```
+   const audioFiles = import.meta.glob('../../public/data/audio_samples/**/*.wav', { eager: true });
+   ```
+> **Note:** Vite’s `import.meta.glob` currently doesn’t support dynamic literals, so the path must remain hard-coded.
+
+## Metrics
+To change which evaluation metrics appear in the UI, simply edit the `METRICS` array in `src/config.ts`.
+
+## Introduction Examples
+The sample data shown in the introduction popup comes from the `EXAMPLE_DATA` constant in `src/config.ts`. Update that object to customize your examples.
+
+## UI Texts
+- **Login page:** edit `src/components/Login.tsx`
+- **Instruction popup:** edit `src/components/InstructionsPopup.tsx`
+- **Submission pages (success/failure):** edit `src/components/ExperimentForm.tsx`
+
+## Disabling Experiment Access
+If you want to block users from reaching the experiment page, uncomment this line in `src/App.tsx`:
 ```
-const audioFiles = import.meta.glob('../../public/data/audio_samples/**/*.wav', { eager: true });
+{/* <Route path="/" element={<ExperimentEnd />} /> */}
 ```
-** Currently, import.meta.glob of Vite doesn't support dynamic literal so that the path is hard coded.
-** Currently, we implemented deploying the server with dev setting (suitable with small number of participants). 
 
 # Env Setting
 ## Install nvm

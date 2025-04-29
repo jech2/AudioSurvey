@@ -1,6 +1,6 @@
 import React from 'react';
 import { Music, X } from 'lucide-react';
-import { PATHS, EXAMPLE_DATA } from '../config';
+import { METRICS, PATHS, EXAMPLE_DATA } from '../config';
 
 interface InstructionsPopupProps {
   isOpen: boolean;
@@ -29,7 +29,7 @@ export function InstructionsPopup({ isOpen, onClose, registerAudioRef, handleAud
           <div className="prose max-w-none">
             <h3 className="text-xl font-semibold text-blue-700">실험 목적</h3>
             <p>
-              본 실험은 KAIST 문화기술대학원 Music and Audio Computing Lab에서 진행되는 연구의 일환으로, <strong>멜로디와 코드가 주어졌을 때 어울리는 피아노 반주를 생성하는 AI 모델의 성능을 평가</strong>하기 위해 진행됩니다.
+              본 실험은 your_institution에서 진행되는 연구의 일환으로, <strong>멜로디와 코드가 주어졌을 때 어울리는 피아노 반주를 생성하는 AI 모델의 성능을 평가</strong>하기 위해 진행됩니다.
             </p>
             <p>
               귀한 시간 내어 실험에 참여해주셔서 정말 감사드립니다!
@@ -44,7 +44,7 @@ export function InstructionsPopup({ isOpen, onClose, registerAudioRef, handleAud
               <li>추가로, 여러 tab에서 같은 이름으로 접속하면 안되니 <strong className="text-black">꼭 하나의 tab에서 실험을 진행해주세요.</strong></li>
               <li><strong className="text-black">실험이 완료된 후에는 완료되었다고 카카오톡으로 말씀 부탁드립니다!</strong></li>
               <li><strong className="text-black">우측 하단의 물음표 버튼을 클릭</strong>하시면 이 실험 안내 창을 다시 확인하실 수 있습니다.</li>
-              <li>실험 진행 중 <strong className="text-black">문의사항</strong>이 있으시다면 <strong className="text-black">카카오톡, 혹은 최은진 (jech@kaist.ac.kr) 으로 연락</strong> 부탁드립니다.</li>
+              <li>실험 진행 중 <strong className="text-black">문의사항</strong>이 있으시다면 <strong className="text-black">카카오톡, 혹은 your_name (your_contact) 으로 연락</strong> 부탁드립니다.</li>
             </ul>
             
             <h3 className="text-xl font-semibold text-blue-700 mt-6">실험 방법</h3>
@@ -127,7 +127,7 @@ function ExampleSection({
   handleAudioPlay,
   audioIdPrefix
 }: ExampleSectionProps) {
-  const metrics = ['멜로디와 어울림', '화성', '일관성', '정확도', '전체적인 퀄리티'];
+  const metrics = METRICS;
   
   return (
     <div className="my-6 p-4 bg-gray-50 rounded-lg border border-gray-200">

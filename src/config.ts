@@ -1,7 +1,4 @@
-// export const METRICS = ['Coherence', 'Harmony', 'Consistency', 'Correctness', 'Overall', 'Creativity'];
-export const METRICS = ['멜로디와 어울림', '화성', '일관성', '정확도', '전체적인 퀄리티']
-
-// export const DEBUG_METRICS = ['Coherence', 'Harmony', 'Consistency', 'Correctness', 'Overall', 'Creativity'];
+export const METRICS = ['멜로디와 어울림', '화성', '일관성', '정확도']
 export const DEBUG_METRICS = METRICS;  // use same metrics for debug mode
 
 // 실험 설정
@@ -13,7 +10,7 @@ export const EXPERIMENT_CONFIG = {
   // set debug mode
   DEBUG_MODE: true,
   DEBUG: {
-    SAMPLE_COUNT: 2,    // the number of samples
+    SAMPLE_COUNT: 10,    // the number of samples
     AUDIO_COUNT: 6,     // the number of models per sample
   }
 } as const;
@@ -24,7 +21,7 @@ export const PATHS = {
   AUDIO_SAMPLES: './public/data/audio_samples',
   // directory for audio examples (for introduction popup)
   EVAL_EXAMPLES: './public/data/audio_examples',
-  // leadsheet related file names
+  // condition file names (path in the public/data/audio_samples/{sample_name}/ or public/data/audio_examples/{sample_name})
   LEADSHEET: {
     IMAGE: 'leadsheet-1.png',
     AUDIO: 'leadsheet.wav'
