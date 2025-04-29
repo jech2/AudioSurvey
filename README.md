@@ -1,10 +1,8 @@
 # AudioSurvey: A Web-Based Audio Evaluation Tool
-This repository provides an interactive, browser-based platform for subjective audio evaluation experiments. Participants can listen to audio samples, rate them across multiple metrics, and have their responses recorded for analysis.
+This repository provides an interactive, browser-based platform for subjective audio evaluation experiments. It is designed to enable researchers to conveniently conduct subjective evaluations using audio samples. 
 
 ![image](./survey_example.png)
-** Currently, the page is shown in Korean. We will also release the english version in the future.
 
-** Currently, we implemented deploying the server with dev setting (suitable with small number of participants). 
 
 # Features
 - **Participant Tracking**: Users enter their name to begin the experiment. Responses are saved to responses/{user_name}/response_{timestamp}.csv, and page log files capture time spent on each page. Check out the sample data in responses/eunjinchoi/.
@@ -106,5 +104,10 @@ $ npm run dev
 $ uvicorn server.main:app --reload --port 8000
 ```
 
-## Contact
+# Current Status
+- Language support: The interface is currently available in Korean. An English version will be released soon.
+
+- Deployment: Currently, we implemented deploying the server with dev setting (suitable for a small number of participants).
+
+# Contact
 If you have any questions regarding this repository, contact Eunjin Choi (jech@kaist.ac.kr). 
