@@ -23,32 +23,36 @@ This repository provides an interactive, browser-based platform for subjective a
 
 
 # How to Use
-## Audio Samples
+## Change Audio Samples
 The audio files used in the experiment are stored under:
 - `public/data/audio_samples` (main samples)
 - `public/data/audio_examples` (intro popup examples)
 
+Each example audio path follows the format:  
+`public/data/audio_samples/{audio_sample}/{model}.wav`
+
 To update the loading path:
-1. Adjust the `PATHS` constant in `src/config.ts`.
-2. Modify the glob import in `src/utils/audioLoader.ts`:
+1. Place your own audio files in the correct directory structure and naming format.
+2. Update the `PATHS` constant in `src/config.ts`.
+3. Modify the glob import statement in `src/utils/audioLoader.ts`:
    ```
    const audioFiles = import.meta.glob('../../public/data/audio_samples/**/*.wav', { eager: true });
    ```
 > **Note:** Vite’s `import.meta.glob` currently doesn’t support dynamic literals, so the path must remain hard-coded.
 
-## Metrics
-To change which evaluation metrics appear in the UI, simply edit the `METRICS` array in `src/config.ts`.
+## Change Metrics
+To change the evaluation metrics for your experiment, edit the `METRICS` array in `src/config.ts`.
 
-## Introduction Examples
+## Change Introduction Examples
 The sample data shown in the introduction popup comes from the `EXAMPLE_DATA` constant in `src/config.ts`. Update that object to customize your examples.
 
-## UI Texts
+## Change UI Texts
 - **Login page:** edit `src/components/Login.tsx`
 - **Instruction popup:** edit `src/components/InstructionsPopup.tsx`
 - **Submission pages (success/failure):** edit `src/components/ExperimentForm.tsx`
 
-## Disabling Experiment Access
-If you want to block users from reaching the experiment page, uncomment this line in `src/App.tsx`:
+## Extra: Disabling Experiment Access
+If you want to block users from reaching the experiment page(not recruiting), uncomment this line in `src/App.tsx`:
 ```
 {/* <Route path="/" element={<ExperimentEnd />} /> */}
 ```
