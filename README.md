@@ -1,5 +1,5 @@
 # AudioSurvey: A Web-Based Audio Evaluation Tool
-This repository provides an interactive, browser-based platform for subjective audio evaluation experiments. It is designed to enable researchers to conveniently conduct subjective evaluations using audio samples. 
+This repository provides an interactive, browser-based platform for subjective audio evaluation experiments. It is designed to enable researchers to conveniently conduct subjective evaluations using audio samples. The interface currently includes example evaluations of model-generated samples for the lead sheet-based piano accompaniment generation task.
 
 ![image](./survey_example.png)
 
